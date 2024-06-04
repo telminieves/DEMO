@@ -1,0 +1,22 @@
+<!-- myapp/templates/myapp/plotly_template.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plotly Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Plotly Graph</h1>
+    <div id="graph"></div>
+    <script type="text/javascript">
+        var graph = {{ graph_json|safe }};
+        Plotly.react('graph', graph.data, graph.layout);
+    </script>
+
+<div id="graph2"></div>
+<script type="text/javascript">
+    var graph = {{graph_json2|safe}} ;
+    Plotly.react('graph2', graph.data, graph.layout);
+</script>
+</body>
+</html>
